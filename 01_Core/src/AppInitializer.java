@@ -1,3 +1,4 @@
+import bean.SpringBean;
 import config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -12,6 +13,11 @@ public class AppInitializer {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(AppConfig.class);
         context.refresh();
+
+        SpringBean bean = context.getBean(SpringBean.class);
+        bean.testBean();
+        System.out.println(bean);
+
         context.close();
 
     }
