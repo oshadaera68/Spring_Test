@@ -12,12 +12,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class AppInitializer {
     public static void main(String[] args) {
 
-        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+        // 1st method
+        /*Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
             public void run() {
                 System.out.println("JVM is shut down");
             }
-        }));
+        }));*/
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.register(AppConfig.class);
@@ -32,5 +33,7 @@ public class AppInitializer {
         System.out.println(bean3);
 
         //context.close();
+        //2nd method
+        context.registerShutdownHook();
     }
 }
