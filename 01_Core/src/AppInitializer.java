@@ -23,6 +23,12 @@ public class AppInitializer {
         context.register(AppConfig.class);
         context.refresh();
 
+        //1st method
+        //context.close();
+
+        //2nd method
+        context.registerShutdownHook();
+
         //Request Bean 1st method(ClassName.class request bean)
         //SpringBeanOne bean1 = context.getBean(SpringBeanOne.class);
         //SpringBeanTwo bean2 = context.getBean(SpringBeanTwo.class);
@@ -57,11 +63,5 @@ public class AppInitializer {
 
         MyConnection myConnection = (MyConnection) context.getBean("connection");
         System.out.println(myConnection);
-
-        //1st method
-        //context.close();
-
-        //2nd method
-        context.registerShutdownHook();
     }
 }
