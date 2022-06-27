@@ -7,7 +7,7 @@ package bean;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("BeanThree")
 public class SpringBeanThree {
     public SpringBeanThree() {
         System.out.println("Bean Three");
