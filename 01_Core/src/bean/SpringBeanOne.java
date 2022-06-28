@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /*scopes are divided 2 parts.
- * 1.singleton scope
- * 2.prototype scope
+ * 1.singleton scope (ConfigurableBeanFactory.SCOPE_SINGLETON)
+ * 2.prototype scope (ConfigurableBeanFactory.SCOPE_PROTOTYPE)
  */
 
 @Component
