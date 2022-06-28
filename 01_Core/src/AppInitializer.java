@@ -1,5 +1,5 @@
 import bean.MyConnection;
-import bean.SpringBeanThree;
+import bean.SpringBeanOne;
 import bean.SpringBeanTwo;
 import config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class AppInitializer {
     public static void main(String[] args) {
-        // 1st method
+        // 1st method in hooking process
         /*Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
             public void run() {
@@ -26,7 +26,7 @@ public class AppInitializer {
         //1st method
         //context.close();
 
-        //2nd method
+        //2nd method in hooking process
         context.registerShutdownHook();
 
         //Request Bean 1st method(ClassName.class request bean)
@@ -48,11 +48,11 @@ public class AppInitializer {
         //System.out.println(springBeanTwo);
 
         //SpringBeanThree => springBeanThree(Bean Id)
-//        SpringBeanThree springBeanThree = (SpringBeanThree) context.getBean("BeanThree");
-//        System.out.println(springBeanThree);
+        //SpringBeanThree springBeanThree = (SpringBeanThree) context.getBean("BeanThree");
+        //System.out.println(springBeanThree);
 
-        MyConnection bean = context.getBean(MyConnection.class);
-        System.out.println(bean);
+        //MyConnection bean = context.getBean(MyConnection.class);
+        //System.out.println(bean);
 
         //MyConnection myConnection = (MyConnection) context.getBean("myConnection");
         //System.out.println(myConnection);
@@ -61,7 +61,24 @@ public class AppInitializer {
         //MyConnection myConnection = (MyConnection) context.getBean("getMyConnection");
         //System.out.println(myConnection);
 
-        MyConnection myConnection = (MyConnection) context.getBean("connection");
-        System.out.println(myConnection);
+        //MyConnection myConnection = (MyConnection) context.getBean("connection");
+        //System.out.println(myConnection);
+
+        SpringBeanOne ref1 = context.getBean(SpringBeanOne.class);
+        SpringBeanOne ref2 = context.getBean(SpringBeanOne.class);
+        SpringBeanOne ref3 = context.getBean(SpringBeanOne.class);
+        System.out.println(ref1);
+        System.out.println(ref2);
+        System.out.println(ref3);
+
+        SpringBeanTwo b1ref1 = context.getBean(SpringBeanTwo.class);
+        SpringBeanTwo b2ref2 = context.getBean(SpringBeanTwo.class);
+        System.out.println(b1ref1);
+        System.out.println(b2ref2);
+
+        MyConnection con1 = context.getBean(MyConnection.class);
+        MyConnection con2 = context.getBean(MyConnection.class);
+        System.out.println(con1);
+        System.out.println(con2);
     }
 }
