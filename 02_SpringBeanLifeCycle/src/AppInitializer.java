@@ -21,8 +21,8 @@ public class AppInitializer {
         //System.out.println(bean2);
         //System.out.println(bean3);
 
-        //MyConnection bean1 = context.getBean(MyConnection.class);
-        //MyConnection bean2 = context.getBean(MyConnection.class);
+        MyConnection bean1 = context.getBean(MyConnection.class);
+        MyConnection bean2 = context.getBean(MyConnection.class);
         //System.out.println(bean1);
         //System.out.println(bean2);
 

@@ -17,7 +17,7 @@ public class AppConfig {
 
     @Bean
     @Scope("prototype")
-    public MyConnection myConnection(){
+    public MyConnection myConnection() {
         return new MyConnection();
     }
 
